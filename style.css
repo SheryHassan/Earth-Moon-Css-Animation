@@ -1,0 +1,113 @@
+/*    Css Reset    */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+/* ---End  Css Reset------    */
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: black;
+}
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+.earth,
+.earth2 {
+  background-color: rgb(58, 179, 220);
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  place-content: center;
+  position: relative;
+}
+.moon-container {
+  position: absolute;
+  width: 220px;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  color: #ffffff;
+  display: flex;
+  place-content: center;
+  animation: moon-animation 5s linear infinite;
+}
+.moon,
+.moon2 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: 0 0 10px white;
+}
+.earth2 {
+  display: grid;
+  place-content: center;
+}
+.moon2 {
+  animation: moon2-animation 5s linear infinite;
+}
+.box-container:hover .moon-container {
+  animation-duration: 20s;
+}
+.earth2:hover .moon2 {
+  animation-duration: 20s;
+}
+
+@keyframes moon-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moon2-animation {
+  from {
+    transform: rotate(0deg) translateY(-100px);
+  }
+  to {
+    transform: rotate(360deg) translateY(-100px);
+  }
+}
